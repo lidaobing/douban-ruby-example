@@ -16,7 +16,7 @@ class DoubanController < ApplicationController
       else
         # step 3, have access_token, now you can use douban API
         douban.access_token = session[:access_token]
-        render :text => douban.get_people.inspect
+        render :text => douban.get_people.inspect, :content_type => Mime::TEXT
       end
     else
       if session[:request_token]
@@ -27,7 +27,7 @@ class DoubanController < ApplicationController
         session[:access_token] = douban.access_token :as_hash
         redirect_to :action => :index
       else
-        # error branch, you return from douban, but request_token 
+        # error branch, you return from douban, but request_token
         logger.info "return from oauth but no request_token"
         redirect_to :action => :index
       end
