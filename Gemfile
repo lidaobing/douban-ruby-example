@@ -5,8 +5,9 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'douban-ruby', '~> 0.0.9'
+gem 'sqlite3', :require => 'sqlite3'
+gem 'douban-ruby', '~> 0.0.10'
+gem 'pg'
 
 group :development do
 #  gem 'mongrel'
