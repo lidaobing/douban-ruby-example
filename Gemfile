@@ -9,7 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'douban-ruby', '~> 0.0.9'
 
 group :development do
-  gem 'mongrel'
+#  gem 'mongrel'
 end
 
 # Use unicorn as the web server
