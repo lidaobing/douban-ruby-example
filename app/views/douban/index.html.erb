@@ -1,7 +1,11 @@
-export DOUBAN_API_KEY="<%= DoubanController::DOUBAN_APIKEY %>"
-export DOUBAN_SECRET_KEY="<%= DoubanController::DOUBAN_SECRET %>"
-export DOUBAN_ACCESS_TOKEN="<%= raw @access_token.token %>"
-export DOUBAN_ACCESS_SECRET="<%= raw @access_token.secret %>"
-export DOUBAN_UID="<%= raw @people.uid %>"
-
-<%= raw @people.inspect %>
+<%= form_tag :action => :authorize do %>
+  <p>
+  <b>APIKEY:</b><br />
+  <%= text_field_tag :apikey, @douban_apikey, :size => 32 %>
+  </p>
+  <p>
+  <b>SECRET:</b><br />
+  <%= text_field_tag :secret, @douban_secret, :size => 16 %>
+  </p>
+  <%= submit_tag "Authorize Douban" %>
+<% end %>
