@@ -16,7 +16,10 @@ class DoubanController < ApplicationController
       else
         # step 3, have access_token, now you can use douban API
         douban.access_token = session[:access_token]
-        render :text => douban.get_people.inspect, :content_type => Mime::TEXT
+        @access_token = douban.access_token
+        @people = douban.get_people
+        render :index, :content_type => Mime::TEXT, :layout => false
+        #render :text => douban.get_people.inspect, :content_type => Mime::TEXT
       end
     else
       if session[:request_token]

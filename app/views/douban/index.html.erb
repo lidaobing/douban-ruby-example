@@ -1,0 +1,7 @@
+export DOUBAN_API_KEY="<%= DoubanController::DOUBAN_APIKEY %>"
+export DOUBAN_SECRET_KEY="<%= DoubanController::DOUBAN_SECRET %>"
+export DOUBAN_ACCESS_TOKEN="<%= raw @access_token.token %>"
+export DOUBAN_ACCESS_SECRET="<%= raw @access_token.secret %>"
+export DOUBAN_UID="<%= raw @people.uid %>"
+
+<%= raw @people.inspect %>
